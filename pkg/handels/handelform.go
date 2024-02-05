@@ -1,7 +1,7 @@
 package handels
 
 import (
-	f "KingCoffe/internal/tgform"
+	"KingCoffe/pkg/tgform"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
@@ -9,9 +9,12 @@ func HandleForm(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	if update.CallbackQuery != nil {
 		switch update.CallbackQuery.Data {
 		case "О нас":
-			f.AboutAs(bot, update)
-		case "Меню":
-
+			tgform.AboutAs(bot, update)
+		case "Адрес":
+			msg := tgbotapi.NewMessage(update.CallbackQuery.Message.Chat.ID,
+				"Кафе : KINGS’ COFFEE \n"+
+					"Адрес: Москва, п.Сосенское, ул.Большое Понизовье 10")
+			bot.Send(msg)
 		case "Связаться с нами":
 			msg := tgbotapi.NewMessage(update.CallbackQuery.Message.Chat.ID, "🌐  https//kingcoffee \n \n"+
 				"✉️  info@kingcoffee.ru \n \n"+
@@ -21,7 +24,7 @@ func HandleForm(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	} else if update.Message != nil {
 		switch update.Message.Command() {
 		case "start":
-			f.MainForm(bot, update.Message)
+			tgform.Form(bot, update.Message)
 		}
 	}
 }

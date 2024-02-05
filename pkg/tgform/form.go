@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func MainForm(bot *tgbotapi.BotAPI, m *tgbotapi.Message) {
+func Form(bot *tgbotapi.BotAPI, m *tgbotapi.Message) {
 	// Создайте макет формы
 	form := tgbotapi.NewInlineKeyboardMarkup(
 		tgbotapi.NewInlineKeyboardRow(

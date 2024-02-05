@@ -1,12 +1,13 @@
 package main
 
 import (
-	h "KingCoffe/pkg/handels"
 	"fmt"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
+
+	h "KingCoffe/pkg/handels"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 func init() {
@@ -32,6 +33,7 @@ func main() {
 
 	for update := range updates {
 		h.HandleForm(bot, update)
+		h.HandleButton(bot, update)
 
 	}
 
