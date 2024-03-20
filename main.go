@@ -34,6 +34,8 @@ func main() {
 	for update := range updates {
 		h.HandleForm(bot, update)
 		h.HandleButton(bot, update)
+		h.HandelProduct(bot, update)
+		h.HandelAskProduc(bot, update)
 
 	}
 

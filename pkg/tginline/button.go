@@ -9,14 +9,12 @@ import (
 func Button(bot *tgbotapi.BotAPI, m *tgbotapi.Message) {
 	numericKeyboard := tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Меню"),
+			tgbotapi.NewKeyboardButton("Каталог"),
 		), tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("Корзина"),
+			tgbotapi.NewKeyboardButton("Меню"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
 			tgbotapi.NewKeyboardButton("Профель"),
-			tgbotapi.NewKeyboardButton("QR-code"),
-		), tgbotapi.NewKeyboardButtonRow(
 			tgbotapi.NewKeyboardButton("Заказы"),
 		), tgbotapi.NewKeyboardButtonRow(
 			tgbotapi.NewKeyboardButton("Админ панель"),
